@@ -1,4 +1,4 @@
-class role::server_node {
+class roles::server_node {
   include profiles::java7
   include profiles::mysql
   include profiles::mongodb
