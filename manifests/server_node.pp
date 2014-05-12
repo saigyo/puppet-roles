@@ -12,8 +12,7 @@ class roles::server_node {
 
   group { 'ubuntu':
     name   => 'ubuntu',
-    ensure => present,
-    gid    => 1000
+    ensure => present
   }
 
   user { 'everest':
@@ -44,7 +43,6 @@ class roles::server_node {
   user { 'ubuntu':
     require => Group['ubuntu'],
     name    => 'ubuntu',
-    uid     => 1000,
     gid     => 'ubuntu',
     groups  => ['ubuntu','adm'],
     home    => '/home/ubuntu',
