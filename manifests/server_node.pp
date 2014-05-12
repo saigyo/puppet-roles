@@ -10,6 +10,12 @@ class roles::server_node {
     gid    => 222
   }
 
+  group { 'ubuntu':
+    name   => 'ubuntu',
+    ensure => present,
+    gid    => 1000
+  }
+
   user { 'everest':
     require => Group['everest'],
     name    => 'everest',
@@ -35,12 +41,6 @@ class roles::server_node {
     force   => true
   }
   
-  group { 'ubuntu':
-    name   => 'everest',
-    ensure => present,
-    gid    => 1000
-  }
-
   user { 'ubuntu':
     require => Group['ubuntu'],
     name    => 'ubuntu',
